@@ -13,12 +13,12 @@ COPY ./requirements.txt /requirements.txt
 WORKDIR /
 
 RUN pip3 install -r requirements.txt
-RUN python fileForDoc.py
+
 
 COPY . /
 
 #EXPOSE 8080
 
 ENTRYPOINT [ "python3" ]
-
+CMD ["fileForDoc.py"]
 CMD [ "app.py" ]
