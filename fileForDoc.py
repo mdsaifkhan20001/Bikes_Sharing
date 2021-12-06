@@ -32,10 +32,10 @@ Rf.predict([[1,0,0,1,9.84,14.395,81,0.0,3,13,0]])
 
 
 # saving the model to the local file system
-filename = 'finalized_new_bike_model.pickle'
+filename = 'finalized_new1_bike_model.pickle'
 pickle.dump(Rf, open(filename, 'wb'))
 
-filename = 'finalized_new_bike_model.pickle'
+filename = 'finalized_new1_bike_model.pickle'
 RF1 = pickle.load(open(filename, 'rb'))
 pred=RF1.predict([[1,0,1,1,10.66,13.65,35,7.0015,12,55,2]])
 print('prediction is', pred)
