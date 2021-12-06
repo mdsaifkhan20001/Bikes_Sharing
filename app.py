@@ -39,7 +39,7 @@ def index():
                 #research=1
             #else:
                 #research=0
-            filename = 'finalized_new_bike_model.pickle'
+            filename = 'finalized_new1_bike_model.pickle'
             RF1 = pickle.load(open(filename, 'rb')) # loading the model file from the storage
             # predictions using the loaded model file
             #prediction=loaded_model.predict([[gre_score,toefl_score,university_rating,sop,lor,cgpa,research]])
