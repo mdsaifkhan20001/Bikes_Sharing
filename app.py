@@ -15,23 +15,6 @@ from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import train_test_split, GridSearchCV
 from scipy import stats 
 from sklearn.metrics import mean_squared_error
-import pickle
-train= pd.read_csv('new_train.csv') # loading the training data
-
-
-Y = train['count']
-X = train.drop(columns = ['count'])
-
-X_train, X_test, y_train, y_test = train_test_split(
-    X, Y,test_size=0.25,random_state=255
-)
-
-Rf = RandomForestRegressor(n_estimators = 100,criterion='mse',random_state=255,max_depth=50,min_samples_split=10, verbose=3,oob_score=True)
-Rf.fit(X_train,y_train)
-
-# saving the model to the local file system
-filename = 'finalized_new_bike_model.pickle'
-pickle.dump(Rf, open(filename, 'wb'))
 
 app = Flask(__name__) # initializing a flask app
 
@@ -63,7 +46,7 @@ def index():
                 #research=1
             #else:
                 #research=0
-            filename = 'finalized_new1_bike_model.pickle'
+            filename = 'finalized_new11_bike_model.pickle'
             RF1 = pickle.load(open(filename, 'rb')) # loading the model file from the storage
             # predictions using the loaded model file
             #prediction=loaded_model.predict([[gre_score,toefl_score,university_rating,sop,lor,cgpa,research]])
